@@ -1,24 +1,113 @@
 body {
-    display: flex; 
-    margin: 0; 
-    flex-direction: column; 
-    background-color: rgb(28, 28, 28); 
-    justify-content: center; 
-    align-items: center; 
-    align-content: center;
+    background-color:  #0f1212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-body h1 {
-    margin-bottom: 10px;
-    color: rgb(0, 255, 153); 
-    font-size: 10rem; 
-    letter-spacing: 10px; 
-    word-spacing: 10px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.container {
+    background-color:  #131616;
+    height: 80%;
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px  #090b0b85;
 }
 
-body h4 {
-    color: rgb(197, 197, 197);
-    letter-spacing: 10px;
-    font-family: 'Times New Roman', Times, serif;
+.title-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title-text h1 {
+    margin-bottom: 0px;
+    color: rgb(215, 215, 215);
+    text-transform: capitalize;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    font-size: 3rem;
+}
+.title-text h6 {
+    margin-top: 0px;
+    color: rgb(135, 135, 135);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    word-spacing: 2px;
+}
+
+.action-items {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.form-items {
+    margin: 10px 20px;
+}
+
+#file-btn {
+    background-color: #151A19;
+    height: 30px;
+}
+
+input[type="file"] {
+    display: none;
+}
+  
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #101313;
+    border: 0 solid;
+    color: rgb(215, 215, 215);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+}
+
+.choose-files {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.file-name {
+    padding: 10px 15px;
+    width: 100%;
+    background-color: #151A19;
+    border: 0 solid;
+    outline: none;
+    cursor:auto;
+}
+
+.display-image {
+    background-color: #151A19;
+    width: 100%;
+    min-height: 35vh;
+    border-radius: 10px;
+}
+.converter-items {
+    width: 30%;
+    min-height: 35vh;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.btn.convert , .btn.download {
+    margin: 30px 0;
+    width: 100%;
+}
+
+.file-format {
+    background-color: #101313;
+    color: rgb(215, 215, 215);
+    padding: 10px 15px;
+    border: 0 solid;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
 }

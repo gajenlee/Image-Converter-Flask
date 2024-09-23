@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Converter</title>
+    <link rel="stylesheet" href="../../static/styles/home.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-text">
+            <h1 class="title">file converter</h1>
+            <h6 class="mutted">Convert any kind image file to new format</h6>
+        </div>
+        <form action="" class="form-items">
+            <div class="choose-files">
+                <div class="input-file-btn">
+                    <label for="file-upload" class="btn">
+                        Upload
+                    </label>
+                    <input id="file-upload" type="file" />    
+                </div>
+                <input type="text" class="file-name" readonly>
+            </div>
+            <div class="action-items">
+                <div class="display-image"></div>
+                <div class="converter-items">
+                    <div class="file-format-types">
+                        <select name="file-format" id="file-format" class="file-format">
+                            <option value="">Select File Format</option>
+                            <option value="jpg">JPG</option>
+                            <option value="png">PNG</option>
+                            <option value="jpeg">JPEG</option>
+                            <option value="ico">ICO</option>
+                            <option value="webp">WEBP</option>
+                        </select>
+                    </div>
+                    <div class="convert-btn">
+                        <button type="submit" role="button" class="btn convert">convert</button>
+                    </div>
+                    <div class="download-btn">
+                        <button role="button" class="btn download">Download</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

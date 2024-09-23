@@ -10,4 +10,8 @@ def hello_world(name):
 @app.route('/home')
 @app.route('/')
 def main():
-    return render_template('home.html', homeText = "Hello, World")
+    app.logger.info("Loading home page... ")
+    return render_template('index.html', homeText = "Hello, World")
+
+if __name__ == "__main__":
+    app.run(debug=True)
