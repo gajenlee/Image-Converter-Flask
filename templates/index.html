@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Converter</title>
+    <link rel="icon" href="../static/imgs/file.png">
     <link rel="stylesheet" href="../../static/styles/home.css">
 </head>
 
@@ -21,19 +22,16 @@
                     </label>
                     <input id="file-upload" type="file" />    
                 </div>
-                <input type="text" class="file-name" readonly>
+                <input type="text" class="file-name" placeholder="No file selected" readonly>
             </div>
             <div class="action-items">
-                <div class="display-image"></div>
+                <div class="display-image">
+                    <h1>No File Selected</h1>
+                </div>
                 <div class="converter-items">
                     <div class="file-format-types">
                         <select name="file-format" id="file-format" class="file-format">
                             <option value="">Select File Format</option>
-                            <option value="jpg">JPG</option>
-                            <option value="png">PNG</option>
-                            <option value="jpeg">JPEG</option>
-                            <option value="ico">ICO</option>
-                            <option value="webp">WEBP</option>
                         </select>
                     </div>
                     <div class="convert-btn">

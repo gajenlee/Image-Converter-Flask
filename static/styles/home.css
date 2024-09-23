@@ -89,6 +89,10 @@ input[type="file"] {
     width: 100%;
     min-height: 35vh;
     border-radius: 10px;
+    color: rgb(215, 215, 215);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .converter-items {
     width: 30%;
@@ -110,4 +114,11 @@ input[type="file"] {
     width: 100%;
     outline: none;
     border-radius: 5px;
+}
+
+.file-name {
+    color: rgb(215, 215, 215); 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 5px;
 }
