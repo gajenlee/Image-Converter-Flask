@@ -1,0 +1,24 @@
+body {
+    display: flex; 
+    margin: 0; 
+    flex-direction: column; 
+    background-color: rgb(28, 28, 28); 
+    justify-content: center; 
+    align-items: center; 
+    align-content: center;
+}
+
+body h1 {
+    margin-bottom: 10px;
+    color: rgb(0, 255, 153); 
+    font-size: 10rem; 
+    letter-spacing: 10px; 
+    word-spacing: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body h4 {
+    color: rgb(197, 197, 197);
+    letter-spacing: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
