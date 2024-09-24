@@ -28,13 +28,15 @@ def convert():
         toConvert = request.form['file-format']
 
         upload_file_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file_path.filename))
-        print(upload_file_path)
 
         # Save the file
         file_path.save(upload_file_path)
+        app.logger.info("The file uploaded to the cloud....")
 
         # Converter Porcess
         output_file = ImageConverter(upload_file_path, toConvert).convert()
+        app.logger.info("The file was converted into new format... ")
+
         list_val = output_file.split('/')
         list_val.pop(0)
         output_file = "/".join(list_val)
@@ -44,6 +46,7 @@ def convert():
 
 @app.route('/app/uploads/<filename>')
 def download_file(filename):
+    app.logger.info("file send to download.... ")
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == "__main__":
