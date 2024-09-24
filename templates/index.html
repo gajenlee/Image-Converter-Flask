@@ -12,14 +12,12 @@
                     <label for="file-upload" class="btn">
                         Upload
                     </label>
-                    <input id="file-upload" type="file" name="file-path" />
+                    <input id="file-upload" accept="image/png, image/gif, image/jpg, image/jpeg, image/x-icon, image/webp" type="file" name="file-path" />
                 </div>
                 <label id="file-name-view" for="file-upload" class="file-name">No file selected</label>
             </div>
             <div class="action-items">
-                <div class="display-image">
-                    <h1>No File Selected</h1>
-                </div>
+                <div class="display-image" id="display-image"></div>
                 <div class="converter-items">
                     <div class="file-format-types">
                         <select name="file-format" class="file-format">
@@ -33,7 +31,17 @@
                         <input type="submit" value="convert" class="btn convert" id="convert">
                     </div>
                     <div class="download-btn">
-                        <button role="button" class="btn download">Download</button>
+                        {% if output_file != None %}
+                            <a 
+                                download="Image_file_converter.com.{{ output_file.split('.')[-1] }}" 
+                                href="/{{ output_file }}" 
+                                class="btn download" 
+                            >
+                            Download
+                            </a>
+                        {% else %}
+                            <a class="btn download disabled" >Download</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -44,7 +52,37 @@
     <script>
         $('#file-upload').change((e) => {
             let file_list = $('#file-upload').val().split('\\');
-            $('#file-name-view').text(`Selected File: ${file_list[file_list.length - 1]}`);
+            if (file_list[file_list.length - 1] != '') {
+                $('#file-name-view').text(`Selected File: ${file_list[file_list.length - 1]}`);
+            } else {
+                $('#display-image').html('<h1>No File Selected</h1>');
+            }
+
+            const file = e.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+
+                // When the image is loaded
+                reader.onload = function(e) {
+                    // Create an image element with the loaded data
+                    const img = $('<img />', {
+                        src: e.target.result,
+                        alt: 'Selected Image'
+                    });
+
+                    // Clear previous content in the preview div
+                    $('#display-image').html('');  
+                    $('#display-image').append(img); // Append the new image
+                };
+
+                // Read the file as Data URL
+                reader.readAsDataURL(file);
+
+            } else {
+                // If no valid image is selected, show a message
+                $('#display-image').html('<h1>No File Selected</h1>');
+            }
         })
+        $('#display-image').html('<h1>No File Selected</h1>');
     </script>
 {% endblock %}
