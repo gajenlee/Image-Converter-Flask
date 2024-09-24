@@ -1,0 +1,2 @@
+class ImageConverter():
+    pass
