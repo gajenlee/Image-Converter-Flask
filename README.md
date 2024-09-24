@@ -34,3 +34,4 @@ Install Requirements
 >> `python3 main.py`
 
 ### Output
+![Screenshot 2024-09-24 152738](https://github.com/user-attachments/assets/0fa7c911-0abe-4174-b5e2-5e56a2ba2137)
