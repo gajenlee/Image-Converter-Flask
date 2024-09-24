@@ -1,28 +1,20 @@
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Converter</title>
-    <link rel="icon" href="../static/imgs/file.png">
-    <link rel="stylesheet" href="../../static/styles/home.css">
-</head>
-
-<body>
+{%extends "base.html" %}
+{% block title %}Image Converter{% endblock %}
+{% block converter %}
     <div class="container">
         <div class="title-text">
-            <h1 class="title">file converter</h1>
+            <h1 class="title">Image converter</h1>
             <h6 class="mutted">Convert any kind image file to new format</h6>
         </div>
-        <form action="" class="form-items">
+        <form class="form-items" method="post" enctype="multipart/form-data">
             <div class="choose-files">
                 <div class="input-file-btn">
                     <label for="file-upload" class="btn">
                         Upload
                     </label>
-                    <input id="file-upload" type="file" />    
+                    <input id="file-upload" type="file" name="file-path" />
                 </div>
-                <input type="text" class="file-name" placeholder="No file selected" readonly>
+                <label id="file-name-view" for="file-upload" class="file-name">No file selected</label>
             </div>
             <div class="action-items">
                 <div class="display-image">
@@ -30,12 +22,15 @@
                 </div>
                 <div class="converter-items">
                     <div class="file-format-types">
-                        <select name="file-format" id="file-format" class="file-format">
+                        <select name="file-format" class="file-format">
                             <option value="">Select File Format</option>
+                            {% for i in file_format %}
+                            <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
                         </select>
                     </div>
                     <div class="convert-btn">
-                        <button type="submit" role="button" class="btn convert">convert</button>
+                        <input type="submit" value="convert" class="btn convert" id="convert">
                     </div>
                     <div class="download-btn">
                         <button role="button" class="btn download">Download</button>
@@ -44,6 +39,12 @@
             </div>
         </form>
     </div>
-</body>
-
-</html>
+{% endblock %}
+{% block script %}
+    <script>
+        $('#file-upload').change((e) => {
+            let file_list = $('#file-upload').val().split('\\');
+            $('#file-name-view').text(`Selected File: ${file_list[file_list.length - 1]}`);
+        })
+    </script>
+{% endblock %}

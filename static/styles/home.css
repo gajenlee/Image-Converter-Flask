@@ -1,8 +1,10 @@
-body {
+.main-continer {
     background-color:  #0f1212;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .container {
